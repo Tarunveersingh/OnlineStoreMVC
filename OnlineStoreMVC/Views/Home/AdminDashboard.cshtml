@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "AdminDashboard";
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <h1>Wel Come to the Admin Dashboard</h1>
+
+            <h3 align="center">@Html.ActionLink("Sale Details", "AllSale", "Sale") </h3>
+
+            <h3 align="center">@Html.ActionLink("Purhcase Details", "AllPurchase", "Purchase") </h3>
+
+            <h3 align="center">@Html.ActionLink("Stock Details", "AllStock", "Stock") </h3>
+
+            <h3 align="center">@Html.ActionLink("All Contact Details", "ContactDetails", "Home") </h3>
+
+            <h1 class="btn btn-warning"> @Html.ActionLink("Back to Home Page", "Index", "Home")</h1>
+        </div>
+
+    </div>
+
+</div>

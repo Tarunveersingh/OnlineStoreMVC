@@ -1,0 +1,88 @@
+﻿@model IEnumerable<OnlineStoreMVC.Models.PurchaseDetail>
+
+@{
+    ViewBag.Title = "AllPurchase";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+
+            <h2>Purchase Record </h2>
+
+            <p>
+                @Html.ActionLink("New Purchase", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CompanyName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Mobile)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Qty)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BuyingDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Bill)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Mobile)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Qty)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BuyingDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Bill)
+                        </td>
+                        <td>
+                            <h2 class="btn btn-danger"> @Html.ActionLink("Edit", "Edit", new { id = item.id }) |</h2>
+                        </td>
+                        <td>
+                            <h2 class="btn btn-primary"> @Html.ActionLink("Delete", "Delete", new { id = item.id }) </h2>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+
+
+            <h1 class="btn btn-warning"> @Html.ActionLink("Back to Home Page", "AdminDashboard", "Home")</h1>
+
+
+        </div>
+
+    </div>
+
+</div>
+
